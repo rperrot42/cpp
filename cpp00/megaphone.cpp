@@ -7,13 +7,14 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" <<  std::endl;
 	else{
+		std::string str = argv[1];
 		for (int i = 1; i < argc; i++)
 		{
-			std::cout << argv[i];
-			if (i != argc - 1)
-				std::cout << ' ';
+			if (i != 1)
+				str += argv[i];
 		}
-		std::cout <<  std::endl;
+		for (size_t i = 0; i < str.length(); i++)
+			str[i] = std::toupper(str[i]);
+		std::cout << str << std::endl;
 	}
-
 }
