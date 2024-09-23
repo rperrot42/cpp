@@ -1,12 +1,12 @@
 MAKE = make
 
-NAME = megaphone
+NAME = phoneBook
 
 DIR_OBJS = .obj
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = megaphone.cpp
+SRC = Contact.cpp main.cpp PhoneBook.cpp
 
 CC = c++
 

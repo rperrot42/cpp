@@ -1,12 +1,10 @@
 .DS_Store
 .idea
 *.o
-minishell
+phonebook
 */*.o
 philo/.objs
 a.out
 .vscode
 .obj
 megaphone
-libft/libft.a
-libft/.obj
