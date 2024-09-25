@@ -5,9 +5,9 @@ int main(){
 	std::string command;
 	PhoneBook phone_book = PhoneBook();
 	std::cout << "Enter a command EXIT, SEARCH, ADD" << std::endl;
-	std::getline(std::cin, command);
 	while (std::getline(std::cin, command)){
 		if (command == "ADD"){
+
 			phone_book.addContact();
 		}
 		else if (command == "SEARCH"){

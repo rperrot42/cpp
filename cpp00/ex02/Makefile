@@ -1,6 +1,6 @@
 MAKE = make
 
-NAME = phoneBook
+NAME = account
 
 DIR_OBJS = .obj
 
