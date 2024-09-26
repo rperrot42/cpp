@@ -1,12 +1,13 @@
 MAKE = make
 
-NAME = phoneBook
+NAME = human
 
 DIR_OBJS = .obj
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = Account.cpp tests.cpp
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+
 CC = c++
 
 CHECK = ✅
