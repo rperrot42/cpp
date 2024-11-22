@@ -1,13 +1,13 @@
 MAKE = make
 
-NAME = harlFilter
+NAME = a.out
 
 DIR_OBJS = .obj
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
 SRC = main.cpp \
-	Harl.cpp
+	Fixed.cpp
 
 CC = c++
 
@@ -33,11 +33,11 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -rf $(DIR_OBJS)
-	@echo "$(RED)$(DIR_OBJS) removed$(CROSS)$(RESET_COLOR)"
+	@echo "$(RED)$(DIR_OBJS) removed $(CROSS)$(RESET_COLOR)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(RED)$(NAME) removed$(CROSS)$(RESET_COLOR)"
+	@echo "$(RED)$(NAME) removed $(CROSS)$(RESET_COLOR)"
 
 re: fclean all
 
