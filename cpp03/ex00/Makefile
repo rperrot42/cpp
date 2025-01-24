@@ -6,7 +6,7 @@ DIR_OBJS = .obj
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp zombieHorde.cpp
+SRC = ClapTrap.cpp main.cpp
 
 CC = c++
 
@@ -22,7 +22,7 @@ OBJ = $(addprefix $(DIR_OBJS)/, $(SRC:.cpp=.o))
 
 all:$(NAME)
 
-$(DIR_OBJS)/%.o: %.cpp Zombie.hpp Makefile
+$(DIR_OBJS)/%.o: %.cpp ClapTrap.hpp Makefile
 	@mkdir -p  $(dir $@)
 	@$(CC)  $(FLAGS) -c $< -o $@
 	@echo "$(CYAN)$@ created $(CHECK)$(RESET_COLOR)"

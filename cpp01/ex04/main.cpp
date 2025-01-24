@@ -24,7 +24,7 @@ int main(int argc, char **argv){
 		if (!argv[i][0])
 			std::cout << "Error : filename is empty"<< std::endl;
 	}
-	std ::string filename = argv[1];
+	std::string filename = argv[1];
 	std::string content = getFileContent(argv[1]);
 	if (content.empty())
 		return 1;

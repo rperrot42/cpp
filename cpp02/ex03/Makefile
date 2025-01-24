@@ -1,13 +1,15 @@
 MAKE = make
 
-NAME = zombie
+NAME = a.out
 
 DIR_OBJS = .obj
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp zombieHorde.cpp
-
+SRC = main.cpp \
+	Fixed.cpp \
+	Point.cpp \
+	bsp.cpp
 CC = c++
 
 CHECK = ✅
@@ -22,7 +24,7 @@ OBJ = $(addprefix $(DIR_OBJS)/, $(SRC:.cpp=.o))
 
 all:$(NAME)
 
-$(DIR_OBJS)/%.o: %.cpp Zombie.hpp Makefile
+$(DIR_OBJS)/%.o: %.cpp Makefile Fixed.hpp Point.hpp
 	@mkdir -p  $(dir $@)
 	@$(CC)  $(FLAGS) -c $< -o $@
 	@echo "$(CYAN)$@ created $(CHECK)$(RESET_COLOR)"
@@ -32,11 +34,11 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -rf $(DIR_OBJS)
-	@echo "$(RED)$(DIR_OBJS) removed$(CROSS)$(RESET_COLOR)"
+	@echo "$(RED)$(DIR_OBJS) removed $(CROSS)$(RESET_COLOR)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(RED)$(NAME) removed$(CROSS)$(RESET_COLOR)"
+	@echo "$(RED)$(NAME) removed $(CROSS)$(RESET_COLOR)"
 
 re: fclean all
 

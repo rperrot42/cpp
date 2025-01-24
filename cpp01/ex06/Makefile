@@ -23,7 +23,7 @@ OBJ = $(addprefix $(DIR_OBJS)/, $(SRC:.cpp=.o))
 
 all:$(NAME)
 
-$(DIR_OBJS)/%.o: %.cpp Makefile
+$(DIR_OBJS)/%.o: %.cpp Makefile Harl.hpp
 	@mkdir -p  $(dir $@)
 	@$(CC)  $(FLAGS) -c $< -o $@
 	@echo "$(CYAN)$@ created $(CHECK)$(RESET_COLOR)"

@@ -13,13 +13,13 @@ public:
 	~HumanA();
 	void 		attack();
 	void 		setWeapon(Weapon &weapon);
-	Weapon 		getWeapon();
+	Weapon 		&getWeapon();
 	std::string	&getName();
 	void 		setName(std::string name);
 
 private:
 	std::string name;
-	Weapon weapon;
+	Weapon *weapon;
 };
 
 

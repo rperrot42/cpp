@@ -1,3 +1,9 @@
-//
-// Created by rperrot on 1/16/25.
-//
+#include <iostream>
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
+
+class ClapTrap
+{
+public:
+};
+#endif
