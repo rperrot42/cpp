@@ -18,7 +18,7 @@ public:
 	void 		setNickName(std::string nickName);
 	void 		setDarkest(std::string darkest);
 	std::string toString();
-	void 		addInfoContact();
+	int 		addInfoContact();
 
 private:
 	std::string name;

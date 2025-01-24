@@ -50,18 +50,20 @@ std::string createPhoneNumber(){
 			first = false;
 		}
 		std::getline(std::cin, phoneNumber);
-		if (phoneNumber.length() == 10){
-			for (int i = 0; i < 10; i++){
-				if (phoneNumber[i] >= '0' && phoneNumber[i] <= '9'){
+		if (std::cin.eof())
+			return "";
+		if (phoneNumber.length() == 10) {
+			for (int i = 0; i < 10; i++) {
+				if (phoneNumber[i] >= '0' && phoneNumber[i] <= '9') {
 					isNumber = true;
 				}
-				else{
+				else {
 					isNumber = false;
 					break;
 				}
 			}
 		}
-		else{
+		else {
 			std::cout << "The phone number must have 10 digits" << std::endl;
 		}
 	}
@@ -72,21 +74,35 @@ std::string createText(std::string name){
 	std::string text;
 	std::cout << "Enter the " << name << std::endl;
 	std::getline(std::cin, text);
+	if (std::cin.eof())
+		return "";
 	while (text.empty()){
 		if (text.empty()){
 			std::cout << "The " << name << " can't be empty" << std::endl;
 		}
 		std::getline(std::cin, text);
+		if (std::cin.eof())
+			return "";
 	}
 	return text;
 }
 
-void Contact::addInfoContact(){
+int Contact::addInfoContact()
+{
 	this->name = createText("name");
+	if (this->name.empty())
+		return (1);
 	this->firstName = createText("first name");
+	if (this->firstName.empty())
+		return (1);
 	this->nickName = createText("nickname");
+	if (this->nickName.empty())
+		return (1);
 	this->phoneNumber = createPhoneNumber();
+	if (this->phoneNumber.empty())
+		return (1);
 	this->darkest = createText("darkest secret");
+	return (this->darkest.empty());
 }
 
 std::string Contact::toString()

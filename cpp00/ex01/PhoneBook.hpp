@@ -12,8 +12,8 @@ public:
 	void	setContactIndice(int contactIndice);
 	int		getNbContact() const;
 	void	setNbContact(int nb_contact);
-	void 	addContact();
-	void	search();
+	int 	addContact();
+	int		search();
 	void	printAllContact();
 	PhoneBook();
 

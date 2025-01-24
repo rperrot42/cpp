@@ -26,14 +26,16 @@ void PhoneBook::setNbContact(int nb_contact)
 	nbContact = nb_contact;
 }
 
-void PhoneBook::addContact(){
+int PhoneBook::addContact(){
 	if (this->nbContact < 8){
 		this->nbContact++;
 	}
 	Contact contact = Contact();
-	contact.addInfoContact();
+	if (contact.addInfoContact())
+		return 1;
 	this->listContact[this->contactIndice] = contact;
 	this->contactIndice = (this->contactIndice + 1) % 8;
+	return 0;
 }
 std::string get10Char(std::string str){
 	std::string result;
@@ -70,11 +72,13 @@ void PhoneBook::printAllContact(){
 }
 
 
-void PhoneBook::search(){
+int PhoneBook::search(){
 	printAllContact();
 	std::cout << "Enter the index of the contact" << std::endl;
 	std::string index;
 	std::getline(std::cin, index);
+	if (std::cin.eof())
+		return 1;
 	if (index.length() == 1 && index[0] >= '0' && index[0] <= '7'){
 		int i = index[0] - '0';
 		if (i < this->nbContact){
@@ -87,4 +91,5 @@ void PhoneBook::search(){
 	else{
 		std::cout << "This contact does not exist" << std::endl;
 	}
+	return (0);
 }
