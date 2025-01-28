@@ -1,8 +1,31 @@
-//
-// Created by rperrot on 1/16/25.
-//
 
-#ifndef EX00_CLAPTRAP_H
-#define EX00_CLAPTRAP_H
+#ifndef CLAPTRAP_H
+#define CLAPTRAP_H
+# include <iostream>
+class ClapTrap
+{
+public:
+	ClapTrap(std::string name);
+	ClapTrap(ClapTrap const &clapTrap);
+	ClapTrap();
+	~ClapTrap();
+	ClapTrap &operator=(const ClapTrap &clapTrap);
+	std::string getName() const;
+	int getHitPoint() const;
+	int getEnergyPoint() const;
+	int getAttackDamage() const;
+	void setAttackDamage(const int attackDamage);
+	void setHitPoint(const int hitPoint);
+	void setEnergyPoint(const int energyPOint);
+	void setName(std::string name);
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 
-#endif //EX00_CLAPTRAP_H
+private:
+	std::string		_name;
+	unsigned int	_hitPoint;
+	unsigned int	_energyPoint;
+	unsigned int	_attackDamage;
+};
+#endif
