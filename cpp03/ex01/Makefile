@@ -1,12 +1,12 @@
 MAKE = make
 
-NAME = Claptrap
+NAME = ScavTrap
 
 DIR_OBJS = .obj
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = ClapTrap.cpp main.cpp
+SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
 
 CC = c++
 
@@ -22,7 +22,7 @@ OBJ = $(addprefix $(DIR_OBJS)/, $(SRC:.cpp=.o))
 
 all:$(NAME)
 
-$(DIR_OBJS)/%.o: %.cpp ClapTrap.hpp Makefile
+$(DIR_OBJS)/%.o: %.cpp ClapTrap.hpp Makefile ScavTrap.hpp
 	@mkdir -p  $(dir $@)
 	@$(CC)  $(FLAGS) -c $< -o $@
 	@echo "$(CYAN)$@ created $(CHECK)$(RESET_COLOR)"

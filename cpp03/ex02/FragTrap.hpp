@@ -1,15 +1,19 @@
-//
-// Created by rperrot on 1/29/25.
-//
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-#ifndef EX02_FRAGTRAP_H
-#define EX02_FRAGTRAP_H
+#include "ClapTrap.hpp"
 
-
-class FragTrap
+class FragTrap : public ClapTrap
 {
+public:
+	FragTrap(FragTrap const &fragTrap);
+	FragTrap(std::string name);
+	FragTrap();
+	~FragTrap();
+	FragTrap &operator=(const FragTrap &FragTrap);
+	void highFivesGuys(void);
 
 };
 
 
-#endif //EX02_FRAGTRAP_H
+#endif

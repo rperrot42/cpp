@@ -1,11 +1,11 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap a  = ClapTrap();
-	ClapTrap b = a;
+	ScavTrap a  = ScavTrap("raphael");
+	ScavTrap b = a;
 	ClapTrap c = ClapTrap("Raphael");
-	a.attack("oio");
+	std::cout << a.getName() << "\n"; //  .attack("oio");
 	a.beRepaired(1);
 	a.beRepaired(1);
 	a.beRepaired(1);
@@ -21,4 +21,6 @@ int main()
 	c.attack("OUI");
 	c.takeDamage(10);
 	c.attack("target");
+	a.guardGate();
+	a.guardGate();
 }
