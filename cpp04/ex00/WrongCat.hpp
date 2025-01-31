@@ -7,13 +7,13 @@
 # include "WrongAnimal.hpp"
 
 
-class WrongCat : public virtual WrongAnimal
+class WrongCat : public  WrongAnimal
 {
 public:
-	virtual void makeSound() const;
+	 void makeSound() const;
 	WrongCat();
 	WrongCat(const WrongCat &wrongCat);
-	virtual ~WrongCat();
+	 ~WrongCat();
 	WrongCat &operator=(const WrongCat &wrongCat);
 };
 
