@@ -9,16 +9,16 @@
 
 class WrongAnimal
 {
-		public:
-		virtual void makeSound() const;
-		WrongAnimal();
-		WrongAnimal(const WrongAnimal &wrongAnimal);
-		virtual ~WrongAnimal();
-		WrongAnimal &operator=(const WrongAnimal &wrongAnimal);
-		std::string	getType() const;
-		void	setType(const std::string type);
+	public:
+		virtual void	makeSound() const;
+						WrongAnimal();
+						WrongAnimal(const WrongAnimal &wrongAnimal);
+		virtual 		~WrongAnimal();
+		WrongAnimal 	&operator=(const WrongAnimal &wrongAnimal);
+		std::string		getType() const;
+		void			setType(const std::string type);
 
-		protected:
+	protected:
 		std::string _type;
 };
 
